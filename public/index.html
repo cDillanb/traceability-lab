@@ -19,14 +19,14 @@
           .get("/api/picture")
           .then((res) => {
             console.log(res.data);
-            // const { picture } = res.data;
-            // let img = document.createElement("img");
-            // img.src = picture.value;
-            // document.querySelector("body").appendChild(img);
-            const quote = res.data;
-            let newElement = document.createElement("p");
-            newElement.textContent = quote;
-            document.getElementById("quotes").appendChild(newElement);
+            const picture = res.data;
+            let img = document.createElement("img");
+            img.src = picture;
+            document.querySelector("quotes").appendChild(img);
+            // const quote = res.data;
+            // let newElement = document.createElement("p");
+            // newElement.textContent = quote;
+            // document.getElementById("quotes").appendChild(newElement);
           })
           .catch((err) => console.log(err));
       };
