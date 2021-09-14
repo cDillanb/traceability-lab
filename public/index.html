@@ -24,7 +24,7 @@
             // document.querySelector("body").appendChild(img);
             const { quote } = res.data;
             let newElement = document.createElement("p");
-            newElement.textContent = quote.value;
+            newElement.textContent = quote;
             document.querySelector("body").appendChild(newElement);
           })
           .catch((err) => console.log(err));
