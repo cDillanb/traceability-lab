@@ -8,6 +8,7 @@ let rollbar = new Rollbar({
     captureUnhandledRejections: true
 });
 
+rollbar.log("Hello world!")
 const app = express();
 app.use(express.json());
 app.use("/style", express.static("./public/styles.css"));
