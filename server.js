@@ -3,7 +3,7 @@ const path = require("path");
 const Rollbar = require("rollbar");
 
 let rollbar = new Rollbar({
-    accessToken: "e79761c25fa74dd7993f1823abe8a8da",
+    accessToken: "5de85941061941f29db1b7389b972851",
     captureUncaught: true,
     captureUnhandledRejections: true
 });
@@ -14,6 +14,7 @@ app.use("/style", express.static("./public/styles.css"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
+    rollbar.info("HTML launched successfully!");
 });
 
 app.get("/api/picture", (req, res) => {
