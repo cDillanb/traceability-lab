@@ -29,6 +29,7 @@ app.get("/api/picture", (req, res) => {
     let randomPicture = pictures[randomIndex];
 
     res.status(200).send(randomPicture);
+    rollbar.log("picture successfully served!");
 });
 
 const port = process.env.PORT || 5050;
