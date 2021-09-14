@@ -21,7 +21,7 @@
                     // console.log(res.data);
                     const { picture } = res.data;
                     let img = document.createElement('img');
-                    img.src = picture;
+                    img.src = picture.value;
                     document.querySelector("body").appendChild(img);
                 })
                 .catch((err) => console.log(err))
