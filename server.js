@@ -19,11 +19,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/picture", (req, res) => {
-    const num = 25;
-    num = 20;
-    res.status(200).send(bum);
-    // res.sendStatus(400);
-    // rollbar.error("400");
+    let pictures = [
+        "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/is_my_cat_normal_slideshow/1800x1200_is_my_cat_normal_slideshow.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg",
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    ];
+
+    let randomIndex = Math.floor(Math.random() * pictures.length);
+    let randomPicture = pictures[randomIndex];
+
+    res.status(200).send(randomPicture);
 });
 
 const port = process.env.PORT || 5050;
