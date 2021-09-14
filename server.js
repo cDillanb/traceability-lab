@@ -19,17 +19,23 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/picture", (req, res) => {
-    let pictures = [
-        "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/is_my_cat_normal_slideshow/1800x1200_is_my_cat_normal_slideshow.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg",
-        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    // let pictures = [
+    //     "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/is_my_cat_normal_slideshow/1800x1200_is_my_cat_normal_slideshow.jpg",
+    //     "https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg",
+    //     "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+    // ];
+
+    let quotes = [
+        "Never doubt yourself",
+        "Mind over Matter",
+        "Pain is just weakness leaving the body"
     ];
 
-    let randomIndex = Math.floor(Math.random() * pictures.length);
-    let randomPicture = pictures[randomIndex];
+    let randomIndex = Math.floor(Math.random() * quotes.length);
+    let randomquote = quotes[randomIndex];
 
-    res.status(200).send(randomPicture);
-    rollbar.log("picture successfully served!");
+    res.status(200).send(randomquote);
+    rollbar.log("quote successfully served!");
 });
 
 const port = process.env.PORT || 5050;
