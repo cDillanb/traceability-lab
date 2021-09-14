@@ -9,6 +9,7 @@ let rollbar = new Rollbar({
 });
 
 rollbar.log("Hello world!")
+rollbar.error("bad");
 const app = express();
 app.use(express.json());
 app.use("/style", express.static("./public/styles.css"));
