@@ -19,8 +19,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/picture", (req, res) => {
-    res.sendStatus(400);
-    rollbar.error("400");
+    const num = 25;
+    num = 20;
+    res.status(200).send(bum);
+    // res.sendStatus(400);
+    // rollbar.error("400");
 });
 
 const port = process.env.PORT || 5050;
